@@ -19,8 +19,9 @@ def main():
     # Plot the data
     dplt.create_and_save_plot(stock_data, ticker, period)
 
-    # Calculate and display average price
+    # price fluctuation >5%
     dd.calculate_and_display_average_price(stock_data)
+    dd.notify_if_strong_fluctuations(stock_data, 5)  # price fluctuation 5%
 
 
 if __name__ == "__main__":

@@ -15,3 +15,12 @@ def calculate_and_display_average_price(df):    #задача1.Расчет и �
 
     average_price = df['Close'].mean()
     print(f"Средняя цена закрытия акций за заданный период.: {average_price}")
+
+def notify_if_strong_fluctuations(df, threshold):
+    max_price = df['Close'].max()
+    min_price = df['Close'].min()
+    price_difference = max_price - min_price
+    relative_difference = (price_difference / ((max_price + min_price) / 2)) * 100
+
+    if relative_difference > threshold:
+        print(f"Уведомление: Цена акций колебалась на {relative_difference:.2f}% за заданный период.")
