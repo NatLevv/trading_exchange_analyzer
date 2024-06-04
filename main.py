@@ -23,6 +23,9 @@ def main():
     dd.calculate_and_display_average_price(stock_data)
     dd.notify_if_strong_fluctuations(stock_data, 5)  # price fluctuation 5%
 
+    # exp.csv
+    dd.export_data_to_csv(stock_data, 'stock_data.csv')
+
 
 if __name__ == "__main__":
     main()

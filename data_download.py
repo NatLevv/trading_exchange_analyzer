@@ -24,3 +24,7 @@ def notify_if_strong_fluctuations(df, threshold):
 
     if relative_difference > threshold:
         print(f"Уведомление: Цена акций колебалась на {relative_difference:.2f}% за заданный период.")
+
+def export_data_to_csv(df, filename):
+    df.to_csv(filename, index=False)
+    print(f"Данные сохранены в файл {filename}")
